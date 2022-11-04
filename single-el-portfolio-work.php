@@ -11,30 +11,58 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
+<?php
+	if ( function_exists ( 'get_field' ) ) {
+ 
+ if ( get_field( 'work_title' ) ) {
+	 the_field( 'work_title' );
+ }
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+ 
+	$image = get_field('work_image');
+	$size = 'full'; // (thumbnail, medium, large, full or custom size)
+	if( $image ) {
+    echo wp_get_attachment_image( $image, $size );
+	}
 
-			get_template_part( 'template-parts/content', get_post_type() );
+ if ( get_field( 'work_intro' ) ) {
+	 echo '<h2>'. get_field( 'work_intro' ) .'</h2>';
+ }
+	 
 
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'erik-portfolio-theme' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'erik-portfolio-theme' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
+ 
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+ // Check rows existexists.
+ if( have_rows('single_works_tab') ):
+ 
+	 // Loop through rows.
+	 while( have_rows('single_works_tab') ) : the_row();
+ 
+		 // Load sub field value.
+		 $takeaway = get_sub_field('takeaway');
+		 $process = get_sub_field('process');
+		 $development = get_sub_field('development');
+		 // Do something...
+			echo $takeaway;
+			echo $process;
+			echo $development;
+	 // End loop.
+	 endwhile;
+ 
+ // No value.
+ else :
+	 // Do something...
+ endif;
 
-		endwhile; // End of the loop.
-		?>
 
+}
+
+
+
+
+ ?>
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+
 get_footer();
