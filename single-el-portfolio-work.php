@@ -30,30 +30,33 @@ get_header();
  }
 	 
 
- 
+ if( have_rows('single_works_tab') ): ?>
 
- // Check rows existexists.
- if( have_rows('single_works_tab') ):
- 
-	 // Loop through rows.
-	 while( have_rows('single_works_tab') ) : the_row();
- 
-		 // Load sub field value.
-		 $takeaway = get_sub_field('takeaway');
-		 $process = get_sub_field('process');
-		 $development = get_sub_field('development');
-		 // Do something...
-			echo $takeaway;
-			echo $process;
-			echo $development;
-	 // End loop.
-	 endwhile;
- 
- // No value.
- else :
-	 // Do something...
- endif;
+	
 
+	<?php while ( have_rows('single_works_tab') ) : the_row(); ?>
+
+ 		<ul class="tabs">
+    		<li data-tab-target="#tab-takeaway" class="active tab">Takeaway</li>
+    		<li data-tab-target="#tab-process" class="tab">Process</li>
+    		<li data-tab-target="#tab-development" class="tab">Development</li>
+ 		</ul>
+
+  		<div class="tab-content">
+   			<div id="tab-takeaway" data-tab-content class="active"><p><?php the_sub_field('takeaway'); ?></p></div>
+   			<div id="tab-process" data-tab-content><p><?php the_sub_field('process'); ?></p></div>
+   			<div id="tab-development" data-tab-content><p><?php the_sub_field('development'); ?></p></div>
+ 		</div>
+ 	<?php endwhile; ?>
+
+	</table>
+
+ 	<? else :
+
+
+
+endif;
+ 
 
 }
 

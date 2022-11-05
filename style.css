@@ -641,6 +641,9 @@ textarea {
 # Layouts
 --------------------------------------------------------------*/
 
+
+
+
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
@@ -809,6 +812,32 @@ textarea {
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+[data-tab-content] {
+	display: none;
+}
+
+.active[data-tab-content] {
+	display: block;
+}
+
+.tabs {
+	display: flex;
+	justify-content: space-evenly;
+	list-style-type: none;
+}
+
+.tab {
+	cursor: pointer;
+}
+
+.tab.active {
+	background-color: #CCC;
+}
+
+.tab:hover {
+	background-color: #AAA;
 }
 
 /* Footer
