@@ -54,6 +54,39 @@ function el_register_custom_post_types() {
 }
 add_action( 'init', 'el_register_custom_post_types' );
 
+
+function fwd_register_taxonomies() {
+    // Add Work Category taxonomy
+    $labels = array(
+        'name'              => _x( 'Resources', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Resource', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Resources' ),
+        'all_items'         => __( 'All Resource' ),
+        'parent_item'       => __( 'Parent Resource' ),
+        'parent_item_colon' => __( 'Parent Resource:' ),
+        'edit_item'         => __( 'Edit Resource' ),
+        'view_item'         => __( 'View Resource' ),
+        'update_item'       => __( 'Update Resource' ),
+        'add_new_item'      => __( 'Add New Resource' ),
+        'new_item_name'     => __( 'New Resource Name' ),
+        'menu_name'         => __( 'Resource' ),
+    );
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_in_menu'      => true,
+        'show_in_nav_menu'  => true,
+        'show_in_rest'      => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'resources' ),
+    );
+    register_taxonomy( 'el-work-resources', array( 'el-portfolio-work' ), $args );
+
+}
+add_action( 'init', 'fwd_register_taxonomies');
+
 //This flushes the permalinks if themes are switched
 function el_rewrite_flush() {
     el_register_custom_post_types();

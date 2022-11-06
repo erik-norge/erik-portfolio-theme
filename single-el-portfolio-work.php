@@ -11,30 +11,61 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
+<?php
+	if ( function_exists ( 'get_field' ) ) {
+ 
+ if ( get_field( 'work_title' ) ) {
+	 the_field( 'work_title' );
+ }
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+ 
+	$image = get_field('work_image');
+	$size = 'full'; // (thumbnail, medium, large, full or custom size)
+	if( $image ) {
+    echo wp_get_attachment_image( $image, $size );
+	}
 
-			get_template_part( 'template-parts/content', get_post_type() );
+ if ( get_field( 'work_intro' ) ) {
+	 echo '<h2>'. get_field( 'work_intro' ) .'</h2>';
+ }
+	 
 
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'erik-portfolio-theme' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'erik-portfolio-theme' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
+ if( have_rows('single_works_tab') ): ?>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+	
 
-		endwhile; // End of the loop.
-		?>
+	<?php while ( have_rows('single_works_tab') ) : the_row(); ?>
 
+ 		<ul class="tabs">
+    		<li data-tab-target="#tab-takeaway" class="active tab">Takeaway</li>
+    		<li data-tab-target="#tab-process" class="tab">Process</li>
+    		<li data-tab-target="#tab-development" class="tab">Development</li>
+ 		</ul>
+
+  		<div class="tab-content">
+   			<div id="tab-takeaway" data-tab-content class="active"><p><?php the_sub_field('takeaway'); ?></p></div>
+   			<div id="tab-process" data-tab-content><p><?php the_sub_field('process'); ?></p></div>
+   			<div id="tab-development" data-tab-content><p><?php the_sub_field('development'); ?></p></div>
+ 		</div>
+ 	<?php endwhile; ?>
+
+	</table>
+
+ 	<? else :
+
+
+
+endif;
+ 
+
+}
+
+
+
+
+ ?>
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+
 get_footer();

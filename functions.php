@@ -142,6 +142,7 @@ function erik_portfolio_theme_scripts() {
 	wp_style_add_data( 'erik-portfolio-theme-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'erik-portfolio-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'tabs', get_template_directory_uri() . '/js/tabs.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -153,6 +154,9 @@ function erik_portfolio_theme_scripts() {
     	wp_enqueue_script( 'swiper-scripts', get_template_directory_uri() .'/js/swiper-bundle.min.js', array(), '7.4.1', true );
     	wp_enqueue_script( 'swiper-settings', get_template_directory_uri() .'/js/swiper-settings.js', array( 'swiper-scripts' ), _S_VERSION, true );
 	}
+	wp_enqueue_script( 'isotope-settings', get_template_directory_uri() .'/js/isotope/isotope.settings.js', array( 'isotope-scripts' ), _S_VERSION );
+	wp_enqueue_script('isotope-scripts', get_template_directory_uri() .'/js/isotope/isotope.pkgd.min.js', array('jquery'), _S_VERSION, true);
+   
 }
 add_action( 'wp_enqueue_scripts', 'erik_portfolio_theme_scripts' );
 
@@ -187,3 +191,5 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Custom Post Types.
  */
 require get_template_directory() . '/inc/cpt-taxonomy.php';
+
+
