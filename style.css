@@ -840,6 +840,10 @@ textarea {
 	background-color: #AAA;
 }
 
+.grid-item  { 
+	width: 25%;
+}
+
 /* Footer
 --------------------------------------------- */
 .site-footer {
