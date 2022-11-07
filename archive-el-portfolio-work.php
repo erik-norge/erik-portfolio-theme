@@ -15,9 +15,27 @@ get_header();
 	<?php
 	 $args = array(
     'post_type'      => 'el-portfolio-work',
-    'posts_per_page' => -1,
+    'posts_per_page' => -1,	
+				); 
+	?>
+
+<div class="button-group filter-button-group">
+		<button data-filter="*">show all</button>
+
+<?php
+$terms = get_terms( array(
+	'taxonomy' => 'el-work-resources',
+	'hide_empty' => false,
+));
+
+foreach($terms as $term) {
 	
-); ?>
+	echo '<button data-filter=".'.$term->slug.'">'.$term->name.'</button>';
+}
+?>
+
+</div>
+
 
 	<div class="grid">
 			<?php	
@@ -31,10 +49,10 @@ get_header();
 					$query->the_post(); 
 					?>
 					<article class="card">
-						<a  class="grid-item <?php $categories = get_the_category(get_the_id());
-					foreach($categories as $category) {
-						 echo $category->slug. '';
-					};?>" href="<?php the_permalink(); ?>">
+						<a  class="grid-item <?php $terms = wp_get_post_terms(get_the_id(), $taxonomy = 'el-work-resources');
+                                        foreach ($terms as $term) {
+                                            echo $term->slug . ' ';
+                                        } ?>" href="<?php the_permalink(); ?>">
 							
 							<?php the_post_thumbnail(); ?>
 						</a>
