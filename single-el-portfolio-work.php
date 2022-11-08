@@ -38,14 +38,20 @@ get_header();
 
  		<ul class="tabs">
     		<li data-tab-target="#tab-takeaway" class="active tab">Takeaway</li>
-    		<li data-tab-target="#tab-process" class="tab">Process</li>
-    		<li data-tab-target="#tab-development" class="tab">Development</li>
+    		<li data-tab-target="#tab-key_components" class="tab">Key Components</li>
+    		<li data-tab-target="#tab-technical_skills" class="tab">Technical Skills</li>
  		</ul>
 
   		<div class="tab-content">
    			<div id="tab-takeaway" data-tab-content class="active"><p><?php the_sub_field('takeaway'); ?></p></div>
-   			<div id="tab-process" data-tab-content><p><?php the_sub_field('process'); ?></p></div>
-   			<div id="tab-development" data-tab-content><p><?php the_sub_field('development'); ?></p></div>
+   			<div id="tab-key_components" data-tab-content><p><?php the_sub_field('key_components'); ?></p></div>
+   			<div id="tab-technical_skills" data-tab-content><p><?php the_sub_field('technical_skills'); ?></p>
+				<ul>
+					<li>React Router</li>
+					<li>State Hooks (useState)</li>
+					<li>React props</li>
+					<li>API</li>
+				</ul></div>
  		</div>
  	<?php endwhile; ?>
 

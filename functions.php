@@ -50,6 +50,7 @@ function erik_portfolio_theme_setup() {
 	register_nav_menus(
 		array(
 			'menu-1' => esc_html__( 'Primary', 'erik-portfolio-theme' ),
+			'footer-socials' => esc_html__( 'Footer Socials', 'erik-portfolio-theme' ),
 		)
 	);
 

@@ -42,7 +42,7 @@ if ( $query->have_posts() ) : ?>
     wp_reset_postdata();
 endif;
 ?>
-
+    <?php get_template_part( 'template-parts/content', 'nav' ); ?>
 	</main><!-- #main -->
 
 <?php
