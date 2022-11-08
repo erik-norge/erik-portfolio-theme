@@ -12,6 +12,9 @@ get_header();
 
 	<main id="primary" class="site-main">
 
+	<h1>Portfolio</h1>
+	<p>A collection of projects</p>
+
 	<?php
 	 $args = array(
     'post_type'      => 'el-portfolio-work',
@@ -67,7 +70,7 @@ foreach($terms as $term) {
 			} 
 		?>
 	</div>
-
+	<?php get_template_part( 'template-parts/content', 'nav' ); ?>
 	</main><!-- #main -->
 
 <?php

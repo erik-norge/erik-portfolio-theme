@@ -30,6 +30,7 @@ get_header();
 
 		endwhile; // End of the loop.
 		?>
+		<?php get_template_part( 'template-parts/content', 'nav' ); ?>
 
 	</main><!-- #main -->
 
