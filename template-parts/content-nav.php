@@ -9,7 +9,7 @@
 
 ?>
 
-<body>
+
     <nav class="mobile-nav">
         <a href="http://localhost/portfolio/" class="bloc-icon">
             <img src="<?php echo get_template_directory_uri(); ?>\media\iconmonstr-building-9.svg" />
@@ -24,4 +24,4 @@
         </a>
         
     </nav>
-</body>
+

@@ -31,11 +31,11 @@
 			the_custom_logo();
 			if ( is_front_page() && is_home() ) :
 				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<img src="<?php echo get_template_directory_uri(); ?>\favicon\favicon.ico" />
 				<?php
 			else :
 				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<img src="<?php echo get_template_directory_uri(); ?>\favicon\favicon.ico" />
 				<?php
 			endif;
 			$erik_portfolio_theme_description = get_bloginfo( 'description', 'display' );
