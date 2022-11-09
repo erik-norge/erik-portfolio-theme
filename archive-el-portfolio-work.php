@@ -70,8 +70,9 @@ foreach($terms as $term) {
 			} 
 		?>
 	</div>
-	<?php get_template_part( 'template-parts/content', 'nav' ); ?>
+	
 	</main><!-- #main -->
+	<?php get_template_part( 'template-parts/content', 'nav' ); ?>
 
 <?php
 

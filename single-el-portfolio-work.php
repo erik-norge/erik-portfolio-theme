@@ -14,10 +14,6 @@ get_header();
 <?php
 	if ( function_exists ( 'get_field' ) ) {
  
- if ( get_field( 'work_title' ) ) {
-	 the_field( 'work_title' );
- }
-
  
 	$image = get_field('work_image');
 	$size = 'full'; // (thumbnail, medium, large, full or custom size)
@@ -25,11 +21,52 @@ get_header();
     echo wp_get_attachment_image( $image, $size );
 	}
 
- if ( get_field( 'work_intro' ) ) {
-	 echo '<h2>'. get_field( 'work_intro' ) .'</h2>';
- }
-	 
+	if ( get_field( 'work_title' ) ) {
+		echo '<h2>'. get_field( 'work_title' ) .'</h2>';
+	}
 
+ if ( get_field( 'work_intro' ) ) {
+	 echo '<p>'. get_field( 'work_intro' ) .'</p>';
+ }
+ ?>
+
+<?php
+
+if ( get_field( 'technologies_title' ) ) {
+	echo '<h2>'. get_field( 'technologies_title' ) .'</h2>';
+}
+?>
+<div class="technology-content">
+<?php	
+ if( have_rows('technologies') ): ?>
+<ul>
+	<?php
+	while ( have_rows('technologies') ) : the_row(); ?>
+
+	
+		
+			<li><?php the_sub_field('technology'); ?></li>
+		
+
+	
+	<?php endwhile; ?>
+ </ul>
+	<? else :
+
+
+
+endif; ?>
+</div>	
+
+
+
+
+<div class="btn-container">
+<button type="button" class="btn">Live Site</button>
+<button type="button" class="btn">GitHub</button>
+</div>
+	 
+<?php
  if( have_rows('single_works_tab') ): ?>
 
 	
@@ -71,6 +108,7 @@ endif;
 
  ?>
 	</main><!-- #main -->
+	<?php get_template_part( 'template-parts/content', 'nav' ); ?>
 
 <?php
 
