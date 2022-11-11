@@ -10,10 +10,10 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="works-site-main">
 
-	<h1>Portfolio</h1>
-	<p>A collection of projects</p>
+	
+	<h2 class="works-h2">a collection of projects.</h2>
 
 	<?php
 	 $args = array(

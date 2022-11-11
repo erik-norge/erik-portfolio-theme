@@ -140,6 +140,12 @@ add_action( 'widgets_init', 'erik_portfolio_theme_widgets_init' );
  */
 function erik_portfolio_theme_scripts() {
 	wp_enqueue_style( 'erik-portfolio-theme-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 
+		'erik-googlefonts', 
+		'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap',
+		array(),
+		null // Set null if loading multiple Google Fonts from their CDN
+	);
 	wp_style_add_data( 'erik-portfolio-theme-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'erik-portfolio-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
