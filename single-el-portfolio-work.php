@@ -22,18 +22,18 @@ get_header();
 	}
 
 	if ( get_field( 'work_title' ) ) {
-		echo '<h2>'. get_field( 'work_title' ) .'</h2>';
+		echo '<h2 class="single-works-title">'. get_field( 'work_title' ) .'</h2>';
 	}
 
  if ( get_field( 'work_intro' ) ) {
-	 echo '<p>'. get_field( 'work_intro' ) .'</p>';
+	 echo '<p class="work-overview">'. get_field( 'work_intro' ) .'</p>';
  }
  ?>
 
 <?php
 
 if ( get_field( 'technologies_title' ) ) {
-	echo '<h2>'. get_field( 'technologies_title' ) .'</h2>';
+	echo '<h2 class="technologies-title">'. get_field( 'technologies_title' ) .'</h2>';
 }
 ?>
 <div class="technology-content">
@@ -70,7 +70,7 @@ endif; ?>
  if( have_rows('single_works_tab') ): ?>
 
 	
-
+	
 	<?php while ( have_rows('single_works_tab') ) : the_row(); ?>
 
  		<ul class="tabs">
@@ -88,11 +88,12 @@ endif; ?>
 					<li>State Hooks (useState)</li>
 					<li>React props</li>
 					<li>API</li>
-				</ul></div>
+ 				</ul>
+				</div>
  		</div>
  	<?php endwhile; ?>
 
-	</table>
+ 
 
  	<? else :
 
@@ -102,11 +103,10 @@ endif;
  
 
 }
-
-
-
-
- ?>
+?>
+<div class="cta-container">
+<button class="cta-works">Back To Works</button>
+</div>
 	</main><!-- #main -->
 	<?php get_template_part( 'template-parts/content', 'nav' ); ?>
 
