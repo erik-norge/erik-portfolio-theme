@@ -10,7 +10,9 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="single-site-main">
+
+	<div class="single-works-grid">
 <?php
 	if ( function_exists ( 'get_field' ) ) {
  
@@ -18,9 +20,11 @@ get_header();
 	$image = get_field('work_image');
 	$size = 'full'; // (thumbnail, medium, large, full or custom size)
 	if( $image ) {
-    echo wp_get_attachment_image( $image, $size );
+
+    echo '<div class="single-works-img">'.wp_get_attachment_image( $image, $size ).'</div>';
 	}
 
+	echo '<div class="grid-text">';
 	if ( get_field( 'work_title' ) ) {
 		echo '<h2 class="single-works-title">'. get_field( 'work_title' ) .'</h2>';
 	}
@@ -56,7 +60,9 @@ if ( get_field( 'technologies_title' ) ) {
 
 
 endif; ?>
-</div>	
+</div>
+</div>
+</div>
 
 
 
