@@ -155,12 +155,7 @@ function erik_portfolio_theme_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	// Enqueue Swiper on the Homepage
-	if ( is_front_page() ) {
-    	wp_enqueue_style( 'swiper-styles', get_template_directory_uri() .'/css/swiper-bundle.css', array(), '7.4.1' );
-    	wp_enqueue_script( 'swiper-scripts', get_template_directory_uri() .'/js/swiper-bundle.min.js', array(), '7.4.1', true );
-    	wp_enqueue_script( 'swiper-settings', get_template_directory_uri() .'/js/swiper-settings.js', array( 'swiper-scripts' ), _S_VERSION, true );
-	}
+	
 	wp_enqueue_script( 'isotope-settings', get_template_directory_uri() .'/js/isotope/isotope.settings.js', array( 'isotope-scripts' ), _S_VERSION );
 	wp_enqueue_script('isotope-scripts', get_template_directory_uri() .'/js/isotope/isotope.pkgd.min.js', array('jquery'), _S_VERSION, true);
    
