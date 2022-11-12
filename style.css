@@ -1065,6 +1065,10 @@ button {
 	background-color: rgb(248,248,255);
 }
 
+.works-site-main {
+	padding-left: 1rem;
+}
+
 
 
 
@@ -1072,6 +1076,7 @@ button {
 @media(min-width: 50em) {
 	.works-site-main {
 		padding-top: 4rem;
+		padding-left: 0;
 		text-align:center;
   		display:flex;
   		flex-direction:column;
@@ -1105,7 +1110,7 @@ button {
   display:flex;
   flex-direction:column;
   min-height:74vh;
-  padding-top: 10rem;
+  padding-top: 4rem;
 }
 
 
@@ -1123,6 +1128,11 @@ button {
 	.page-id-7 .entry-content {
 		grid-column: 2/3;
 	}
+
+	.page-id-7 .site-main {
+		
+		padding-top: 10rem;
+	  }
 
 }
 
