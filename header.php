@@ -31,11 +31,11 @@
 			the_custom_logo();
 			if ( is_front_page() && is_home() ) :
 				?>
-				<img src="<?php echo get_template_directory_uri(); ?>\favicon\favicon.ico" />
+				<a href="https://eriklarsen.ca"><img src="<?php echo get_template_directory_uri(); ?>\favicon\favicon.ico" /></a>
 				<?php
 			else :
 				?>
-				<img src="<?php echo get_template_directory_uri(); ?>\favicon\favicon.ico" />
+				<a href="https://eriklarsen.ca"><img src="<?php echo get_template_directory_uri(); ?>\favicon\favicon.ico" /></a>
 				<?php
 			endif;
 			$erik_portfolio_theme_description = get_bloginfo( 'description', 'display' );
