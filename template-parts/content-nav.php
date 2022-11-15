@@ -11,15 +11,13 @@
 
 
     <nav class="mobile-nav">
-        <a href="http://localhost/portfolio/" class="bloc-icon">
+        <a href="<?php echo get_permalink( 7 ) ?>" class="bloc-icon">
             <img src="<?php echo get_template_directory_uri(); ?>\media\iconmonstr-building-9.svg" />
-			
-			
         </a>
-        <a href="http://localhost/portfolio/about/" class="bloc-icon">
+        <a href="<?php echo get_permalink( 12 ) ?>" class="bloc-icon">
 		<img src="<?php echo get_template_directory_uri(); ?>\media\iconmonstr-accessibility-lined.svg" />
         </a>
-        <a href="http://localhost/portfolio/works/" class="bloc-icon">
+        <a href="https://eriklarsen.ca/works/" class="bloc-icon">
 		<img src="<?php echo get_template_directory_uri(); ?>\media\iconmonstr-folder-19.svg" />
         </a>
         

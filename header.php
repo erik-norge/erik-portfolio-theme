@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The header for our theme
  *
@@ -12,8 +13,9 @@
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
+
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
@@ -21,39 +23,40 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'erik-portfolio-theme' ); ?></a>
+	<?php wp_body_open(); ?>
+	<div id="page" class="site">
+		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'erik-portfolio-theme'); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<a href="https://eriklarsen.ca"><img src="<?php echo get_template_directory_uri(); ?>\favicon\favicon.ico" /></a>
+		<header id="masthead" class="site-header">
+			<div class="site-branding">
 				<?php
-			else :
+				the_custom_logo();
+				if (is_front_page() && is_home()) :
 				?>
-				<a href="https://eriklarsen.ca"><img src="<?php echo get_template_directory_uri(); ?>\favicon\favicon.ico" /></a>
+					<a href="<?php echo get_permalink( 7 ) ?>"><img src="<?php echo get_template_directory_uri(); ?>\favicon\favicon.ico" /></a>
 				<?php
-			endif;
-			$erik_portfolio_theme_description = get_bloginfo( 'description', 'display' );
-			if ( $erik_portfolio_theme_description || is_customize_preview() ) :
+				else :
 				?>
-				<p class="site-description"><?php echo $erik_portfolio_theme_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+					<a href="<?php echo get_permalink( 7 ) ?>"><img src="<?php echo get_template_directory_uri(); ?>\favicon\favicon.ico" /></a>
+				<?php
+				endif;
+				$erik_portfolio_theme_description = get_bloginfo('description', 'display');
+				if ($erik_portfolio_theme_description || is_customize_preview()) :
+				?>
+					<p class="site-description"><?php echo $erik_portfolio_theme_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
+												?></p>
+				<?php endif; ?>
+			</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'erik-portfolio-theme' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+			<nav id="site-navigation" class="main-navigation">
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Primary Menu', 'erik-portfolio-theme'); ?></button>
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'primary-menu',
+					)
+				);
+				?>
+			</nav><!-- #site-navigation -->
+		</header><!-- #masthead -->

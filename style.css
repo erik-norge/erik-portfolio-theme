@@ -791,7 +791,7 @@ textarea {
 
 
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 50em) {
 	.main-navigation {
 		display: block;
 		
@@ -983,6 +983,10 @@ textarea {
 	padding: 0 0 1rem 0;
 }
 
+.cta-works {
+	cursor: pointer;
+}
+
 @media(min-width: 50em) {
 
 	.single-site-main {
@@ -1114,6 +1118,10 @@ button {
 }
 
 
+.page-id-7 p {
+	animation: fadein 2s;
+}
+
 @media(min-width: 50em) {
 	.post-7 {
 		display: grid;
@@ -1223,7 +1231,7 @@ button {
 	text-decoration: none;
 }
 
-@media screen and (min-width: 43.75em) {
+@media screen and (min-width: 50em) {
 
 	.footer-menus ul {
 		display: flex;
